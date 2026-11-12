@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Serena • Lectura del Amor</title>
+<meta name="description" content="Dale play y descubre lo que las 3 cartas revelan sobre tu futuro amoroso. Lectura gratis de 2 minutos.">
+<meta name="theme-color" content="#140b2e">
+<style>
+:root{
+  --bg1:#140b2e; --bg2:#2a1458; --gold:#e8c35a; --green:#1fba58; --green2:#17a04a;
+  --txt:#f5effc; --muted:#b9a8d8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg1)}
+body{
+  font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--txt);
+  background:radial-gradient(1200px 600px at 50% -10%,var(--bg2),var(--bg1) 60%);
+  min-height:100dvh;display:flex;flex-direction:column;align-items:center;
+  padding:18px 14px 40px;text-align:center;overflow-x:hidden;
+}
+.topo{max-width:680px;width:100%}
+.selo{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;
+  color:var(--gold);border:1px solid #e8c35a66;border-radius:20px;
+  padding:6px 14px;margin-bottom:14px;text-transform:uppercase;
+}
+h1{font-size:clamp(22px,5.4vw,34px);line-height:1.22;font-weight:800;margin-bottom:10px}
+h1 em{font-style:normal;color:var(--gold)}
+.sub{font-size:clamp(14px,3.8vw,17px);color:var(--muted);margin-bottom:18px;line-height:1.45}
+.sub b{color:var(--txt)}
+
+/* ---------- player ---------- */
+.player{
+  position:relative;width:100%;max-width:680px;aspect-ratio:16/10;
+  border-radius:16px;overflow:hidden;cursor:pointer;user-select:-moz-none;user-select:none;
+  background:linear-gradient(160deg,#241046,#120a28 70%);
+  border:1px solid #ffffff22;box-shadow:0 0 0 1px #00000055,0 18px 60px -12px #000c,0 0 90px -20px #7b3ff2aa;
+}
+.estrelas{position:absolute;inset:0;pointer-events:none}
+.estrelas span{position:absolute;color:#e8c35a;opacity:.35;animation:flu 5s ease-in-out infinite}
+@keyframes flu{0%,100%{transform:translateY(0);opacity:.2}50%{transform:translateY(-9px);opacity:.6}}
+
+.poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:4;background:linear-gradient(160deg,#2a1458ee,#140b2eee)}
+.poster img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 0 40px -6px #e8c35a88}
+.play{
+  width:84px;height:84px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 0 #1fba5880;animation:pulso 1.6s infinite;
+}
+.play svg{width:34px;height:34px;fill:#fff;margin-left:6px}
+@keyframes pulso{0%{box-shadow:0 0 0 0 #1fba5880}70%{box-shadow:0 0 0 26px #1fba5800}100%{box-shadow:0 0 0 0 #1fba5800}}
+.poster .dica{font-size:14px;color:#fff;font-weight:600;letter-spacing:.4px}
+.poster .dica small{display:block;color:var(--muted);font-weight:400;margin-top:3px;font-size:12px}
+
+.legenda{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  padding:26px 8%;z-index:2;
+}
+.legenda p{
+  font-size:clamp(19px,4.6vw,30px);font-weight:800;line-height:1.3;
+  text-shadow:0 2px 18px #000a;opacity:0;transform:translateY(14px);
+  transition:opacity .45s ease,transform .45s ease;
+}
+.legenda p.on{opacity:1;transform:none}
+.legenda b{color:var(--gold)}
+.foco{position:absolute;inset:0;background:radial-gradient(90% 90% at 50% 45%,transparent 55%,#0008);z-index:1;pointer-events:none}
+.serenaMini{
+  position:absolute;left:14px;bottom:16px;z-index:3;display:none;align-items:center;gap:8px;
+  background:#00000066;border-radius:30px;padding:5px 12px 5px 5px;backdrop-filter:blur(4px);
+}
+.serenaMini img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.serenaMini span{font-size:12.5px;font-weight:600}
+.pausado{
+  position:absolute;inset:0;z-index:5;display:none;align-items:center;justify-content:center;
+  background:#000a;font-weight:800;font-size:18px;letter-spacing:.5px;flex-direction:column;gap:8px;
+}
+.pausado svg{width:52px;height:52px;fill:#fff}
+.barra{position:absolute;left:0;bottom:0;height:5px;width:100%;background:#ffffff22;z-index:6}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),#f5d87a)}
+
+/* ---------- CTA ---------- */
+.cta{max-width:680px;width:100%;margin-top:4px;display:none;flex-direction:column;align-items:center;gap:12px}
+.cta.on{display:flex;animation:sobe .6s ease}
+@keyframes sobe{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.seta{font-size:26px;animation:quica 1.1s infinite;margin-top:10px}
+@keyframes quica{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.botao{
+  display:block;width:100%;max-width:560px;text-decoration:none;color:#fff;
+  background:linear-gradient(180deg,var(--green),var(--green2));
+  font-size:clamp(17px,4.6vw,21px);font-weight:800;letter-spacing:.3px;
+  padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px -8px #1fba58cc,inset 0 1px 0 #ffffff55;
+  animation:pulso 1.8s infinite;
+}
+.botao small{display:block;font-size:12.5px;font-weight:600;opacity:.92;margin-top:4px}
+.confia{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;color:var(--muted);font-size:12.5px}
+.confia span{display:flex;align-items:center;gap:5px}
+.rodape{margin-top:34px;max-width:620px;font-size:11px;color:#7f6fa3;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="topo">
+  <div class="selo">✦ Lectura gratis · 2 minutos ✦</div>
+  <h1>Ella hace tu lectura… y <em>dibuja a mano el rostro</em> de la persona que el destino guardó para ti</h1>
+  <p class="sub">Dale <b>play</b> 🔊 y deja que Serena te cuente lo que las <b>3 cartas</b> pueden revelar sobre tu futuro amoroso.</p>
+</div>
+
+<div class="player" id="player">
+  <div class="estrelas" id="estrelas"></div>
+  <div class="foco"></div>
+  <div class="legenda"><p id="cap"></p></div>
+  <div class="serenaMini" id="mini"><img src="serena.jpg" alt=""><span>Serena</span></div>
+  <div class="pausado" id="pausado">
+    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    CONTINUAR
+  </div>
+  <div class="poster" id="poster">
+    <img src="serena.jpg" alt="Serena">
+    <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <div class="dica">Toca para escuchar a Serena <small>🔊 activa el sonido · dura solo 2 minutos</small></div>
+  </div>
+  <div class="barra"><i id="prog"></i></div>
+</div>
+
+<div class="cta" id="cta">
+  <div class="seta">⬇️</div>
+  <a class="botao" id="botao" href="#">
+    SÍ, QUIERO MI LECTURA GRATIS ✨
+    <small>elige tus 3 cartas ahora — toma menos de 2 minutos</small>
+  </a>
+  <div class="confia">
+    <span>🔒 100% seguro</span><span>🃏 Lectura gratis</span><span>📲 Retrato entregado por WhatsApp</span><span>💜 7 días de garantía</span>
+  </div>
+</div>
+
+<p class="rodape">Las lecturas y retratos tienen carácter de entretenimiento y autoconocimiento. Este sitio no está afiliado a WhatsApp/Meta.</p>
+
+<audio id="au" src="vsl.mp3" preload="auto"></audio>
+<script>
+var FUNIL = "https://viewer-production-9bb07eb4.up.railway.app/serena-es";
+var MOMENTO_BOTAO = 94.0;           // quando o botão aparece (s)
+var PIXEL_ID = "";                  // opcional: ID do Pixel da Meta
+
+var FRASES = [
+ [0.0,"Si existe <b>un nombre</b>… un rostro… una persona que <b>no sale de tu cabeza</b>…"],
+ [5.6,"entonces este mensaje es <b>para ti</b>."],
+ [7.72,"Me llamo <b>Serena</b>. Tengo un don que mezcla el <b>tarot</b>… y el <b>dibujo</b>."],
+ [15.16,"Las cartas me muestran la energía de la persona <b>unida a tu destino amoroso</b>."],
+ [22.78,"Y yo dibujo, <b>trazo a trazo</b>, el rostro que veo. ✍️"],
+ [28.9,"Tal vez estás <b>sufriendo</b> por alguien que se fue…"],
+ [32.56,"confundida, sin saber si él es la <b>persona correcta</b>…"],
+ [37.96,"o <b>cansada de esperar</b> un amor que nunca llega."],
+ [42.75,"Tantas mujeres llegaron a mí así: <b>llenas de preguntas</b>…"],
+ [48.3,"y salieron con una <b>respuesta en las manos</b>."],
+ [52.51,"Un <b>retrato</b>. Una <b>dirección</b>. Una <b>paz</b> que no sentían hace tiempo."],
+ [60.26,"Eso es lo que quiero hacer <b>por ti, hoy</b>."],
+ [64.07,"Preparé una lectura <b>gratis</b>, de menos de <b>2 minutos</b>."],
+ [69.29,"Eliges <b>3 cartas</b>… y te muestro lo que tu energía revela. 🔮"],
+ [78.58,"Pero cada retrato se <b>dibuja a mano</b>, uno por uno."],
+ [84.98,"Por eso solo atiendo un <b>número limitado</b> de lecturas por día."],
+ [90.35,"Cuando los lugares del día se acaban… <b>se acaban</b>."],
+ [94.64,"<b>Mira aquí abajo</b> 👇 apareció un <b>botón verde</b> debajo del video."],
+ [101.45,"<b>Tócalo</b> y tu lectura comienza ahora: <b>gratis</b> y hecha para ti."],
+ [108.83,"La respuesta que buscas está a <b>3 cartas de distancia</b>."],
+ [113.89,"Te estoy esperando del otro lado. <b>Ven.</b> 💜"]
+];
+
+var au=document.getElementById('au'),player=document.getElementById('player'),
+    poster=document.getElementById('poster'),cap=document.getElementById('cap'),
+    prog=document.getElementById('prog'),cta=document.getElementById('cta'),
+    pausado=document.getElementById('pausado'),mini=document.getElementById('mini');
+
+// estrelas decorativas
+(function(){var e=document.getElementById('estrelas');for(var i=0;i<14;i++){var s=document.createElement('span');
+s.textContent=['✦','✧','·','✵'][i%4];s.style.left=(4+Math.random()*92)+'%';s.style.top=(4+Math.random()*88)+'%';
+s.style.fontSize=(8+Math.random()*12)+'px';s.style.animationDelay=(Math.random()*5)+'s';e.appendChild(s)}})();
+
+// link do funil com os parametros do anuncio
+(function(){var q=location.search.replace(/^\?/,'');
+document.getElementById('botao').href=FUNIL+(q?('?'+q):'')})();
+
+var idx=-1,mostrou=false,comecou=false;
+function tick(){
+  var t=au.currentTime,d=au.duration||118;
+  prog.style.width=Math.min(100,t/d*100)+'%';
+  var i=-1;for(var k=0;k<FRASES.length;k++){if(t>=FRASES[k][0])i=k;else break}
+  if(i!==idx&&i>=0){idx=i;cap.classList.remove('on');
+    (function(h){setTimeout(function(){cap.innerHTML=h;cap.classList.add('on')},120)})(FRASES[i][1]);
+    mini.style.display=t>=7.5?'flex':'none';
+  }
+  if(!mostrou&&t>=MOMENTO_BOTAO){mostrou=true;cta.classList.add('on');
+    if(window.fbq)fbq('trackCustom','VSL_CTA_Visivel');}
+  if(!au.paused)requestAnimationFrame(tick);
+}
+player.addEventListener('click',function(){
+  if(!comecou){comecou=true;poster.style.display='none';au.play();
+    if(window.fbq)fbq('track','ViewContent');requestAnimationFrame(tick);return}
+  if(au.paused){pausado.style.display='none';au.play();requestAnimationFrame(tick)}
+  else{au.pause();pausado.style.display='flex'}
+});
+au.addEventListener('ended',function(){
+  if(!mostrou){mostrou=true;cta.classList.add('on')}
+  pausado.style.display='flex';pausado.lastChild.textContent='';
+  pausado.firstElementChild.style.display='none';
+  pausado.insertAdjacentText('beforeend','👇 Toca el botón verde abajo');
+});
+if(PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init',PIXEL_ID);fbq('track','PageView');}
+</script>
+</body>
+</html>
