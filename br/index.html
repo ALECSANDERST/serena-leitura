@@ -5,96 +5,90 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Serena • Leitura do Amor</title>
 <meta name="description" content="Aperte o play e descubra o que as 3 cartas revelam sobre o seu futuro amoroso. Leitura gratuita de 2 minutos.">
-<meta name="theme-color" content="#140b2e">
+<meta name="theme-color" content="#0d0720">
 <style>
-:root{
-  --bg1:#140b2e; --bg2:#2a1458; --gold:#e8c35a; --green:#1fba58; --green2:#17a04a;
-  --txt:#f5effc; --muted:#b9a8d8;
-}
+:root{--gold:#e8c35a;--green:#1fba58;--green2:#149a46;--txt:#f5effc;--muted:#b9a8d8}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg1)}
-body{
-  font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--txt);
-  background:radial-gradient(1200px 600px at 50% -10%,var(--bg2),var(--bg1) 60%);
-  min-height:100dvh;display:flex;flex-direction:column;align-items:center;
-  padding:18px 14px 40px;text-align:center;overflow-x:hidden;
-}
-.topo{max-width:680px;width:100%}
-.selo{
-  display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;
-  color:var(--gold);border:1px solid #e8c35a66;border-radius:20px;
-  padding:6px 14px;margin-bottom:14px;text-transform:uppercase;
-}
-h1{font-size:clamp(22px,5.4vw,34px);line-height:1.22;font-weight:800;margin-bottom:10px}
+html,body{background:#0d0720}
+body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--txt);
+ background:radial-gradient(1100px 560px at 50% -8%,#2a1458,#0d0720 62%);
+ min-height:100dvh;display:flex;flex-direction:column;align-items:center;
+ padding:16px 14px 44px;text-align:center;overflow-x:hidden}
+.topo{max-width:860px;width:100%}
+.selo{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--gold);
+ border:1px solid #e8c35a66;border-radius:20px;padding:6px 14px;margin-bottom:12px;text-transform:uppercase}
+h1{font-size:clamp(22px,3.6vw,36px);line-height:1.2;font-weight:800;margin-bottom:8px}
 h1 em{font-style:normal;color:var(--gold)}
-.sub{font-size:clamp(14px,3.8vw,17px);color:var(--muted);margin-bottom:18px;line-height:1.45}
+.sub{font-size:clamp(14px,2vw,17px);color:var(--muted);margin-bottom:16px;line-height:1.45}
 .sub b{color:var(--txt)}
 
-/* ---------- player ---------- */
-.player{
-  position:relative;width:100%;max-width:680px;aspect-ratio:16/10;
-  border-radius:16px;overflow:hidden;cursor:pointer;user-select:-moz-none;user-select:none;
-  background:linear-gradient(160deg,#241046,#120a28 70%);
-  border:1px solid #ffffff22;box-shadow:0 0 0 1px #00000055,0 18px 60px -12px #000c,0 0 90px -20px #7b3ff2aa;
-}
-.estrelas{position:absolute;inset:0;pointer-events:none}
-.estrelas span{position:absolute;color:#e8c35a;opacity:.35;animation:flu 5s ease-in-out infinite}
-@keyframes flu{0%,100%{transform:translateY(0);opacity:.2}50%{transform:translateY(-9px);opacity:.6}}
+/* ================= PLAYER ================= */
+.player{position:relative;width:100%;max-width:860px;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
+ cursor:pointer;user-select:none;background:#120a28;border:1px solid #ffffff22;
+ box-shadow:0 0 0 1px #00000066,0 22px 70px -14px #000d,0 0 110px -24px #7b3ff2aa}
+#stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:4% 6%}
+.th-dark{background:radial-gradient(120% 120% at 50% 30%,#2a1458,#120a28 70%)}
+.th-black{background:#07040f}
+.th-gold{background:linear-gradient(160deg,#e8c35a,#c79b2e)}
+.th-red{background:radial-gradient(120% 120% at 50% 30%,#4a1030,#160612 70%)}
+.th-green{background:radial-gradient(120% 120% at 50% 30%,#0e4d2c,#071f12 72%)}
+.th-gold .cap, .th-gold .cap b{color:#1a1206 !important;text-shadow:none}
+#stage .cap{font-weight:900;line-height:1.14;text-transform:uppercase;letter-spacing:.5px;
+ font-size:clamp(26px,5.2vw,54px);text-shadow:0 3px 22px #000b}
+.cap .hot{color:var(--gold)}
+.cap .on{display:inline-block;animation:popw .14s ease-out}
+@keyframes popw{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+.punch{font-size:clamp(44px,10vw,110px) !important;letter-spacing:1px}
+.rot1{transform:rotate(-1.6deg)}.rot2{transform:rotate(1.4deg)}.rot3{transform:rotate(0deg) scale(1.04)}
 
-.poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:4;background:linear-gradient(160deg,#2a1458ee,#140b2eee)}
+.lay{display:flex;flex-direction:column;align-items:center;gap:3vh;width:100%}
+.foto{width:clamp(120px,22vh,190px);height:clamp(120px,22vh,190px);border-radius:50%;object-fit:cover;
+ border:4px solid var(--gold);box-shadow:0 0 60px -8px #e8c35abb;animation:kb 5s ease-out forwards}
+@keyframes kb{from{transform:scale(.86)}to{transform:scale(1.06)}}
+.cards3{display:flex;gap:3vw}
+.c3{width:clamp(56px,10vh,92px);aspect-ratio:2/3;border-radius:10px;border:2px solid var(--gold);
+ background:linear-gradient(160deg,#3b1d6e,#120a2a);box-shadow:0 10px 28px -8px #000c;
+ display:flex;align-items:center;justify-content:center;font-size:clamp(22px,4vh,34px);
+ animation:flip .5s cubic-bezier(.2,.9,.3,1.2) backwards}
+.c3:nth-child(2){animation-delay:.14s}.c3:nth-child(3){animation-delay:.28s}
+@keyframes flip{from{transform:rotateY(90deg) translateY(16px);opacity:0}to{transform:none;opacity:1}}
+.sketch path{fill:none;stroke:#f3e3a0;stroke-width:2.4;stroke-linecap:round;
+ stroke-dasharray:900;stroke-dashoffset:900;animation:draw 3.4s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.arrowbig{font-size:clamp(50px,11vh,90px);animation:quica .8s infinite}
+@keyframes quica{0%,100%{transform:translateY(0)}50%{transform:translateY(14px)}}
+
+.flashfx{position:absolute;inset:0;z-index:6;display:none;align-items:center;justify-content:center;
+ background:#fff;font-size:clamp(60px,14vh,110px)}
+.shakeit{animation:shk .34s linear}
+@keyframes shk{0%{transform:translate(0)}15%{transform:translate(-9px,5px) rotate(-.7deg)}30%{transform:translate(8px,-6px) rotate(.6deg)}45%{transform:translate(-7px,-4px)}60%{transform:translate(6px,5px) rotate(.4deg)}75%{transform:translate(-4px,2px)}100%{transform:none}}
+.vinheta{position:absolute;inset:0;background:radial-gradient(95% 95% at 50% 45%,transparent 58%,#000a);z-index:2;pointer-events:none}
+
+.poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;z-index:8;background:linear-gradient(160deg,#2a1458f2,#0d0720f5)}
 .poster img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 0 40px -6px #e8c35a88}
-.play{
-  width:84px;height:84px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 0 0 #1fba5880;animation:pulso 1.6s infinite;
-}
-.play svg{width:34px;height:34px;fill:#fff;margin-left:6px}
-@keyframes pulso{0%{box-shadow:0 0 0 0 #1fba5880}70%{box-shadow:0 0 0 26px #1fba5800}100%{box-shadow:0 0 0 0 #1fba5800}}
-.poster .dica{font-size:14px;color:#fff;font-weight:600;letter-spacing:.4px}
+.play{width:86px;height:86px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 0 #1fba5880;animation:pulso 1.5s infinite}
+.play svg{width:36px;height:36px;fill:#fff;margin-left:6px}
+@keyframes pulso{0%{box-shadow:0 0 0 0 #1fba5880}70%{box-shadow:0 0 0 28px #1fba5800}100%{box-shadow:0 0 0 0 #1fba5800}}
+.poster .dica{font-size:15px;color:#fff;font-weight:700}
 .poster .dica small{display:block;color:var(--muted);font-weight:400;margin-top:3px;font-size:12px}
-
-.legenda{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  padding:26px 8%;z-index:2;
-}
-.legenda p{
-  font-size:clamp(19px,4.6vw,30px);font-weight:800;line-height:1.3;
-  text-shadow:0 2px 18px #000a;opacity:0;transform:translateY(14px);
-  transition:opacity .45s ease,transform .45s ease;
-}
-.legenda p.on{opacity:1;transform:none}
-.legenda b{color:var(--gold)}
-.foco{position:absolute;inset:0;background:radial-gradient(90% 90% at 50% 45%,transparent 55%,#0008);z-index:1;pointer-events:none}
-.serenaMini{
-  position:absolute;left:14px;bottom:16px;z-index:3;display:none;align-items:center;gap:8px;
-  background:#00000066;border-radius:30px;padding:5px 12px 5px 5px;backdrop-filter:blur(4px);
-}
-.serenaMini img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
-.serenaMini span{font-size:12.5px;font-weight:600}
-.pausado{
-  position:absolute;inset:0;z-index:5;display:none;align-items:center;justify-content:center;
-  background:#000a;font-weight:800;font-size:18px;letter-spacing:.5px;flex-direction:column;gap:8px;
-}
-.pausado svg{width:52px;height:52px;fill:#fff}
-.barra{position:absolute;left:0;bottom:0;height:5px;width:100%;background:#ffffff22;z-index:6}
+.pausado{position:absolute;inset:0;z-index:9;display:none;align-items:center;justify-content:center;background:#000b;font-weight:800;font-size:19px;flex-direction:column;gap:10px}
+.pausado svg{width:54px;height:54px;fill:#fff}
+.barra{position:absolute;left:0;bottom:0;height:6px;width:100%;background:#ffffff22;z-index:7}
 .barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),#f5d87a)}
 
-/* ---------- CTA ---------- */
-.cta{max-width:680px;width:100%;margin-top:4px;display:none;flex-direction:column;align-items:center;gap:12px}
-.cta.on{display:flex;animation:sobe .6s ease}
-@keyframes sobe{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-.seta{font-size:26px;animation:quica 1.1s infinite;margin-top:10px}
-@keyframes quica{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-.botao{
-  display:block;width:100%;max-width:560px;text-decoration:none;color:#fff;
-  background:linear-gradient(180deg,var(--green),var(--green2));
-  font-size:clamp(17px,4.6vw,21px);font-weight:800;letter-spacing:.3px;
-  padding:18px 22px;border-radius:14px;box-shadow:0 10px 30px -8px #1fba58cc,inset 0 1px 0 #ffffff55;
-  animation:pulso 1.8s infinite;
-}
+/* ================= CTA ================= */
+.cta{max-width:860px;width:100%;margin-top:6px;display:none;flex-direction:column;align-items:center;gap:12px}
+.cta.on{display:flex;animation:sobe .5s ease}
+@keyframes sobe{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.seta{font-size:26px;animation:quica 1.1s infinite;margin-top:8px}
+.botao{display:block;width:100%;max-width:620px;text-decoration:none;color:#fff;
+ background:linear-gradient(180deg,var(--green),var(--green2));
+ font-size:clamp(17px,2.6vw,22px);font-weight:800;padding:18px 22px;border-radius:14px;
+ box-shadow:0 10px 30px -8px #1fba58cc,inset 0 1px 0 #ffffff55;animation:pulso 1.7s infinite}
 .botao small{display:block;font-size:12.5px;font-weight:600;opacity:.92;margin-top:4px}
 .confia{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;color:var(--muted);font-size:12.5px}
 .confia span{display:flex;align-items:center;gap:5px}
-.rodape{margin-top:34px;max-width:620px;font-size:11px;color:#7f6fa3;line-height:1.5}
+.rodape{margin-top:32px;max-width:680px;font-size:11px;color:#7f6fa3;line-height:1.5}
 </style>
 </head>
 <body>
@@ -105,90 +99,91 @@ h1 em{font-style:normal;color:var(--gold)}
 </div>
 
 <div class="player" id="player">
-  <div class="estrelas" id="estrelas"></div>
-  <div class="foco"></div>
-  <div class="legenda"><p id="cap"></p></div>
-  <div class="serenaMini" id="mini"><img src="serena.jpg" alt=""><span>Serena</span></div>
-  <div class="pausado" id="pausado">
-    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-    CONTINUAR
-  </div>
+  <div id="stage" class="th-dark"></div>
+  <div class="vinheta"></div>
+  <div class="flashfx" id="flashfx"></div>
+  <div class="pausado" id="pausado"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>CONTINUAR</span></div>
   <div class="poster" id="poster">
     <img src="serena.jpg" alt="Serena">
     <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-    <div class="dica">Toque para ouvir a Serena <small>🔊 ative o som · dura só 2 minutos</small></div>
+    <div class="dica">Toque para ver sua leitura <small>🔊 ative o som · dura só 2 minutos</small></div>
   </div>
   <div class="barra"><i id="prog"></i></div>
 </div>
 
 <div class="cta" id="cta">
   <div class="seta">⬇️</div>
-  <a class="botao" id="botao" href="#">
-    SIM, QUERO MINHA LEITURA GRATUITA ✨
-    <small>escolha suas 3 cartas agora — leva menos de 2 minutos</small>
-  </a>
-  <div class="confia">
-    <span>🔒 100% seguro</span><span>🃏 Leitura gratuita</span><span>📲 Retrato entregue no WhatsApp</span><span>💜 7 dias de garantia</span>
-  </div>
+  <a class="botao" id="botao" href="#">SIM, QUERO MINHA LEITURA GRATUITA ✨<small>escolha suas 3 cartas agora — leva menos de 2 minutos</small></a>
+  <div class="confia"><span>🔒 100% seguro</span><span>🃏 Leitura gratuita</span><span>📲 Retrato no WhatsApp</span><span>💜 7 dias de garantia</span></div>
 </div>
 
 <p class="rodape">Leituras e retratos têm caráter de entretenimento e autoconhecimento. Este site não é afiliado ao WhatsApp/Meta.</p>
 
 <audio id="au" src="vsl.mp3" preload="auto"></audio>
 <script>
-var FUNIL = "https://viewer-production-9bb07eb4.up.railway.app/serena";
-var MOMENTO_BOTAO = 93.0;           // quando o botão aparece (s)
-var PIXEL_ID = "";                  // opcional: ID do Pixel da Meta
+var CFG={funil:"https://viewer-production-9bb07eb4.up.railway.app/serena",cta:94.51,dur:114.83,endtxt:"👇 Toque no botão verde abaixo"};
+var PIXEL_ID="";
+var CHUNKS=[{"t":0.102,"line":0,"w":[[0.102,"Espera"]]},{"t":0.979,"line":0,"w":[[0.979,"Não"]]},{"t":1.224,"line":0,"w":[[1.224,"feche"]]},{"t":1.649,"line":0,"w":[[1.649,"esse"]]},{"t":1.856,"line":0,"w":[[1.856,"vídeo"]]},{"t":3.69,"line":1,"w":[[3.69,"Porque"],[3.973,"nos"],[4.166,"próximos"]]},{"t":4.708,"line":1,"w":[[4.708,"dois"],[4.952,"minutos"],[5.751,"você"]]},{"t":6.035,"line":1,"w":[[6.035,"pode"],[6.383,"descobrir"],[6.95,"o"]]},{"t":7.04,"line":1,"w":[[7.04,"rosto"],[7.414,"da"],[7.543,"pessoa"]]},{"t":8.032,"line":1,"w":[[8.032,"que"],[8.148,"o"],[8.213,"destino"]]},{"t":8.677,"line":1,"w":[[8.677,"guardou"],[9.089,"pra"],[9.257,"você"]]},{"t":11.07,"line":2,"w":[[11.07,"E"],[11.173,"não"],[11.521,"não"]]},{"t":11.727,"line":2,"w":[[11.727,"é"],[11.817,"brincadeira"]]},{"t":12.811,"line":2,"w":[[12.811,"Deixa"],[13.197,"eu"],[13.275,"te"]]},{"t":13.378,"line":2,"w":[[13.378,"explicar"]]},{"t":15.402,"line":3,"w":[[15.402,"Meu"],[15.608,"nome"],[15.878,"é"]]},{"t":15.93,"line":3,"w":[[15.93,"Serena"]]},{"t":16.782,"line":3,"w":[[16.782,"E"],[16.898,"eu"],[17.04,"tenho"]]},{"t":17.272,"line":3,"w":[[17.272,"um"],[17.375,"dom"],[17.594,"estranho"]]},{"t":18.431,"line":3,"w":[[18.431,"eu"],[18.509,"misturo"],[18.934,"o"]]},{"t":18.973,"line":3,"w":[[18.973,"tarô"],[19.424,"com"],[19.591,"o"]]},{"t":19.656,"line":3,"w":[[19.656,"desenho"]]},{"t":21.63,"line":4,"w":[[21.63,"Quando"],[21.861,"eu"],[21.939,"faço"]]},{"t":22.287,"line":4,"w":[[22.287,"a"],[22.325,"sua"],[22.532,"leitura"]]},{"t":23.305,"line":4,"w":[[23.305,"as"],[23.434,"cartas"],[23.898,"me"]]},{"t":24.014,"line":4,"w":[[24.014,"mostram"],[24.516,"a"],[24.593,"energia"]]},{"t":25.109,"line":4,"w":[[25.109,"da"],[25.225,"pessoa"],[25.573,"ligada"]]},{"t":26.063,"line":4,"w":[[26.063,"ao"],[26.153,"seu"],[26.333,"destino"]]},{"t":26.758,"line":4,"w":[[26.758,"amoroso"]]},{"t":28.746,"line":5,"w":[[28.746,"E"],[28.862,"aí"],[29.042,"eu"]]},{"t":29.171,"line":5,"w":[[29.171,"pego"],[29.441,"o"],[29.48,"lápis"]]},{"t":30.215,"line":5,"w":[[30.215,"e"],[30.292,"desenho"],[30.91,"traço"]]},{"t":31.258,"line":5,"w":[[31.258,"por"],[31.439,"traço"],[31.98,"o"]]},{"t":32.083,"line":5,"w":[[32.083,"rosto"],[32.457,"que"],[32.534,"eu"]]},{"t":32.637,"line":5,"w":[[32.637,"vejo"]]},{"t":34.518,"line":6,"w":[[34.518,"Me"],[34.672,"diz"],[34.917,"se"]]},{"t":35.059,"line":6,"w":[[35.059,"isso"],[35.304,"te"],[35.407,"parece"]]},{"t":35.819,"line":6,"w":[[35.819,"familiar"]]},{"t":36.695,"line":6,"w":[[36.695,"você"],[36.966,"está"],[37.198,"sofrendo"]]},{"t":37.739,"line":6,"w":[[37.739,"por"],[37.881,"alguém"],[38.268,"que"]]},{"t":38.384,"line":6,"w":[[38.384,"foi"],[38.59,"embora"]]},{"t":40.506,"line":7,"w":[[40.506,"Está"],[40.763,"confusa"],[41.549,"sem"]]},{"t":41.756,"line":7,"w":[[41.756,"saber"],[42.142,"se"],[42.335,"ele"]]},{"t":42.554,"line":7,"w":[[42.554,"é"],[42.619,"a"],[42.683,"pessoa"]]},{"t":43.044,"line":7,"w":[[43.044,"certa"]]},{"t":45.006,"line":8,"w":[[45.006,"Ou"],[45.16,"já"],[45.302,"está"]]},{"t":45.534,"line":8,"w":[[45.534,"cansada"],[46.114,"de"],[46.204,"esperar"]]},{"t":46.668,"line":8,"w":[[46.668,"um"],[46.784,"amor"],[47.17,"que"]]},{"t":47.312,"line":8,"w":[[47.312,"nunca"],[47.647,"chega"]]},{"t":49.554,"line":9,"w":[[49.554,"Então"]]},{"t":49.914,"line":9,"w":[[49.914,"presta"]]},{"t":50.314,"line":9,"w":[[50.314,"muita"]]},{"t":50.636,"line":9,"w":[[50.636,"atenção"]]},{"t":51.319,"line":9,"w":[[51.319,"porque"]]},{"t":51.577,"line":9,"w":[[51.577,"essa"]]},{"t":51.847,"line":9,"w":[[51.847,"parte"]]},{"t":52.234,"line":9,"w":[[52.234,"é"]]},{"t":52.26,"line":9,"w":[[52.26,"importante"]]},{"t":54.438,"line":10,"w":[[54.438,"As"],[54.618,"mulheres"],[55.121,"que"]]},{"t":55.249,"line":10,"w":[[55.249,"chegam"],[55.636,"até"],[55.855,"mim"]]},{"t":56.332,"line":10,"w":[[56.332,"chegam"],[56.68,"cheias"],[57.092,"de"]]},{"t":57.182,"line":10,"w":[[57.182,"perguntas"],[58.007,"e"],[58.084,"saem"]]},{"t":58.445,"line":10,"w":[[58.445,"com"],[58.6,"uma"],[58.716,"resposta"]]},{"t":59.309,"line":10,"w":[[59.309,"nas"],[59.528,"mãos"]]},{"t":61.41,"line":11,"w":[[61.41,"Um"]]},{"t":61.564,"line":11,"w":[[61.564,"retrato"]]},{"t":62.481,"line":11,"w":[[62.481,"Uma"]]},{"t":62.713,"line":11,"w":[[62.713,"direção"]]},{"t":63.602,"line":11,"w":[[63.602,"Uma"]]},{"t":63.834,"line":11,"w":[[63.834,"paz"]]},{"t":64.13,"line":11,"w":[[64.13,"que"]]},{"t":64.259,"line":11,"w":[[64.259,"elas"]]},{"t":64.543,"line":11,"w":[[64.543,"não"]]},{"t":64.71,"line":11,"w":[[64.71,"sentiam"]]},{"t":65.264,"line":11,"w":[[65.264,"há"]]},{"t":65.303,"line":11,"w":[[65.303,"muito"]]},{"t":65.599,"line":11,"w":[[65.599,"tempo"]]},{"t":67.446,"line":12,"w":[[67.446,"E"],[67.587,"hoje"],[67.884,"eu"]]},{"t":67.974,"line":12,"w":[[67.974,"quero"],[68.193,"fazer"],[68.541,"isso"]]},{"t":68.799,"line":12,"w":[[68.799,"por"],[68.979,"você"]]},{"t":69.649,"line":12,"w":[[69.649,"preparei"],[70.126,"uma"],[70.268,"leitura"]]},{"t":70.693,"line":12,"w":[[70.693,"gratuita"],[71.466,"de"],[71.595,"menos"]]},{"t":71.956,"line":12,"w":[[71.956,"de"],[72.072,"dois"],[72.394,"minutos"]]},{"t":74.466,"line":13,"w":[[74.466,"Você"],[74.736,"escolhe"],[75.252,"três"]]},{"t":75.548,"line":13,"w":[[75.548,"cartas"]]},{"t":76.386,"line":13,"w":[[76.386,"me"],[76.514,"conta"],[76.888,"o"]]},{"t":76.94,"line":13,"w":[[76.94,"que"],[77.043,"aflige"],[77.481,"o"]]},{"t":77.52,"line":13,"w":[[77.52,"seu"],[77.713,"coração"]]},{"t":78.551,"line":13,"w":[[78.551,"e"],[78.628,"eu"],[78.731,"te"]]},{"t":78.86,"line":13,"w":[[78.86,"mostro"],[79.337,"o"],[79.401,"que"]]},{"t":79.504,"line":13,"w":[[79.504,"a"],[79.569,"sua"],[79.775,"energia"]]},{"t":80.264,"line":13,"w":[[80.264,"revela"]]},{"t":82.206,"line":14,"w":[[82.206,"Mas"],[82.347,"escuta"],[82.811,"bem"]]},{"t":83.301,"line":14,"w":[[83.301,"cada"],[83.584,"retrato"],[84.139,"é"]]},{"t":84.19,"line":14,"w":[[84.19,"desenhado"],[84.77,"à"],[84.834,"mão"]]},{"t":85.26,"line":14,"w":[[85.26,"um"],[85.389,"por"],[85.582,"um"]]},{"t":87.21,"line":15,"w":[[87.21,"Por"]]},{"t":87.377,"line":15,"w":[[87.377,"isso"]]},{"t":87.699,"line":15,"w":[[87.699,"eu"]]},{"t":87.789,"line":15,"w":[[87.789,"só"]]},{"t":87.996,"line":15,"w":[[87.996,"aceito"]]},{"t":88.46,"line":15,"w":[[88.46,"um"]]},{"t":88.537,"line":15,"w":[[88.537,"número"]]},{"t":88.872,"line":15,"w":[[88.872,"limitado"]]},{"t":89.503,"line":15,"w":[[89.503,"de"]]},{"t":89.606,"line":15,"w":[[89.606,"leituras"]]},{"t":90.135,"line":15,"w":[[90.135,"por"]]},{"t":90.328,"line":15,"w":[[90.328,"dia"]]},{"t":91.013,"line":15,"w":[[91.013,"E"]]},{"t":91.129,"line":15,"w":[[91.129,"quando"]]},{"t":91.412,"line":15,"w":[[91.412,"as"]]},{"t":91.554,"line":15,"w":[[91.554,"vagas"]]},{"t":91.837,"line":15,"w":[[91.837,"acabam"]]},{"t":92.649,"line":15,"w":[[92.649,"acabam"]]},{"t":94.614,"line":16,"w":[[94.614,"Agora"],[95.052,"olha"],[95.322,"aqui"]]},{"t":95.528,"line":16,"w":[[95.528,"embaixo"]]},{"t":96.419,"line":16,"w":[[96.419,"Apareceu"],[96.973,"um"],[97.051,"botão"]]},{"t":97.463,"line":16,"w":[[97.463,"verde"],[97.772,"abaixo"],[98.236,"desse"]]},{"t":98.533,"line":16,"w":[[98.533,"vídeo"]]},{"t":100.362,"line":17,"w":[[100.362,"Toca"],[100.684,"nele"],[101.148,"e"]]},{"t":101.251,"line":17,"w":[[101.251,"a"],[101.328,"sua"],[101.521,"leitura"]]},{"t":101.959,"line":17,"w":[[101.959,"começa"],[102.398,"agora"],[102.72,"mesmo"]]},{"t":103.429,"line":17,"w":[[103.429,"gratuita"],[104.137,"rápida"],[104.704,"e"]]},{"t":104.795,"line":17,"w":[[104.795,"feita"],[105.13,"pra"],[105.284,"você"]]},{"t":107.142,"line":18,"w":[[107.142,"A"],[107.258,"resposta"],[107.863,"que"]]},{"t":107.966,"line":18,"w":[[107.966,"você"],[108.25,"procura"],[108.752,"está"]]},{"t":109.023,"line":18,"w":[[109.023,"a"],[109.1,"três"],[109.397,"cartas"]]},{"t":109.848,"line":18,"w":[[109.848,"de"],[109.977,"distância"]]},{"t":112.074,"line":19,"w":[[112.074,"Eu"],[112.215,"estou"],[112.499,"te"]]},{"t":112.589,"line":19,"w":[[112.589,"esperando"]]},{"t":113.518,"line":19,"w":[[113.518,"Vem"]]}];
+var LINES=[{"fx":"punch","th":"black","shake":1,"flash":"⚡"},{"fx":"words","th":"dark","shake":0,"flash":""},{"fx":"words","th":"gold","shake":1,"flash":""},{"fx":"photo","th":"dark","shake":0,"flash":""},{"fx":"cards","th":"dark","shake":0,"flash":"🔮"},{"fx":"sketch","th":"black","shake":0,"flash":""},{"fx":"words","th":"red","shake":1,"flash":"💔"},{"fx":"words","th":"red","shake":0,"flash":""},{"fx":"words","th":"red","shake":0,"flash":""},{"fx":"punch","th":"gold","shake":1,"flash":""},{"fx":"words","th":"dark","shake":0,"flash":""},{"fx":"punch","th":"dark","shake":0,"flash":"✨"},{"fx":"words","th":"green","shake":0,"flash":"🎁"},{"fx":"cards","th":"dark","shake":0,"flash":""},{"fx":"words","th":"black","shake":0,"flash":"✍️"},{"fx":"punch","th":"red","shake":1,"flash":""},{"fx":"arrow","th":"green","shake":1,"flash":""},{"fx":"words","th":"green","shake":0,"flash":""},{"fx":"words","th":"dark","shake":0,"flash":""},{"fx":"photo","th":"black","shake":1,"flash":""}];
+var HOT=["rosto", "destino", "amor", "taro", "tarô", "desenho", "retrato", "gratis", "grátis", "gratuita", "cartas", "verde", "botao", "botão", "vem", "agora", "limitado", "acabam", "resposta", "paz", "direcao", "direção", "coracao", "coração", "mao", "mão", "leitura"];
+var SKETCH='<svg class="sketch" viewBox="0 0 200 200" style="width:clamp(120px,24vh,200px)"><path d="M60 38 C92 18 138 26 148 62 C154 84 150 104 142 120 C136 132 134 146 128 156 C118 172 92 178 76 166 C62 156 58 140 56 124 C54 108 50 92 52 74 C53 60 54 46 60 38 Z"/><path d="M78 92 q10 -8 22 -2 M120 88 q10 -6 20 0"/><path d="M104 96 q-2 16 2 22 q-4 6 -10 4"/><path d="M86 138 q16 12 34 2"/><path d="M56 70 q20 -26 52 -24 q28 2 40 20"/></svg>';
 
-var FRASES = [
- [0.0,"Se existe <b>um nome</b>… um rosto… uma pessoa que <b>não sai da sua cabeça</b>…"],
- [5.6,"então essa mensagem é <b>pra você</b>."],
- [7.77,"Eu me chamo <b>Serena</b>. Tenho um dom que mistura o <b>tarô</b>… e o <b>desenho</b>."],
- [14.46,"As cartas me mostram a energia da pessoa <b>ligada ao seu destino amoroso</b>."],
- [22.28,"E eu desenho, <b>traço por traço</b>, o rosto que eu vejo. ✍️"],
- [28.15,"Talvez você esteja <b>sofrendo</b> por alguém que foi embora…"],
- [32.54,"confusa, sem saber se ele é a <b>pessoa certa</b>…"],
- [37.67,"ou <b>cansada de esperar</b> um amor que nunca chega."],
- [42.89,"Tantas mulheres chegaram até mim assim: <b>cheias de perguntas</b>…"],
- [48.5,"e saíram com uma <b>resposta nas mãos</b>."],
- [52.85,"Um <b>retrato</b>. Uma <b>direção</b>. Uma <b>paz</b> que elas não sentiam há tempo."],
- [58.96,"É isso que eu quero fazer <b>por você, hoje</b>."],
- [62.68,"Preparei uma leitura <b>gratuita</b>, de menos de <b>2 minutos</b>."],
- [67.9,"Você escolhe <b>3 cartas</b>… e eu te mostro o que a sua energia revela. 🔮"],
- [77.5,"Mas cada retrato é <b>desenhado à mão</b>, um por um."],
- [83.83,"Por isso eu só atendo um <b>número limitado</b> de leituras por dia."],
- [89.51,"Quando as vagas do dia acabam… <b>acabam</b>."],
- [93.63,"<b>Olha aqui embaixo</b> 👇 apareceu um <b>botão verde</b> abaixo do vídeo."],
- [99.46,"<b>Toque nele</b> e a sua leitura começa agora: <b>gratuita</b> e feita pra você."],
- [106.84,"A resposta que você procura está a <b>3 cartas de distância</b>."],
- [112.52,"Estou te esperando do outro lado. <b>Vem.</b> 💜"]
-];
+var au=document.getElementById('au'),stage=document.getElementById('stage'),
+ player=document.getElementById('player'),poster=document.getElementById('poster'),
+ prog=document.getElementById('prog'),cta=document.getElementById('cta'),
+ pausado=document.getElementById('pausado'),flashfx=document.getElementById('flashfx');
 
-var au=document.getElementById('au'),player=document.getElementById('player'),
-    poster=document.getElementById('poster'),cap=document.getElementById('cap'),
-    prog=document.getElementById('prog'),cta=document.getElementById('cta'),
-    pausado=document.getElementById('pausado'),mini=document.getElementById('mini');
-
-// estrelas decorativas
-(function(){var e=document.getElementById('estrelas');for(var i=0;i<14;i++){var s=document.createElement('span');
-s.textContent=['✦','✧','·','✵'][i%4];s.style.left=(4+Math.random()*92)+'%';s.style.top=(4+Math.random()*88)+'%';
-s.style.fontSize=(8+Math.random()*12)+'px';s.style.animationDelay=(Math.random()*5)+'s';e.appendChild(s)}})();
-
-// link do funil com os parametros do anuncio
 (function(){var q=location.search.replace(/^\?/,'');
-document.getElementById('botao').href=FUNIL+(q?('?'+q):'')})();
+document.getElementById('botao').href=CFG.funil+(q?('?'+q):'')})();
 
-var idx=-1,mostrou=false,comecou=false;
-function tick(){
-  var t=au.currentTime,d=au.duration||116;
-  prog.style.width=Math.min(100,t/d*100)+'%';
-  var i=-1;for(var k=0;k<FRASES.length;k++){if(t>=FRASES[k][0])i=k;else break}
-  if(i!==idx&&i>=0){idx=i;cap.classList.remove('on');
-    (function(h){setTimeout(function(){cap.innerHTML=h;cap.classList.add('on')},120)})(FRASES[i][1]);
-    mini.style.display=t>=7.5?'flex':'none';
+function esHot(w){w=w.toLowerCase().replace(/[^a-záéíóúüñàâãêôõç]/g,'');return HOT.indexOf(w)>=0}
+function capHTML(ch,wi,punch){
+  var h='';
+  for(var k=0;k<ch.w.length;k++){
+    if(k>wi)break;
+    var w=ch.w[k][1],cls=(esHot(w)?'hot':'')+(k===wi?' on':'');
+    h+='<span class="'+cls+'">'+w+'</span> ';
   }
-  if(!mostrou&&t>=MOMENTO_BOTAO){mostrou=true;cta.classList.add('on');
-    if(window.fbq)fbq('trackCustom','VSL_CTA_Visivel');}
+  return h;
+}
+var ci=-1,li=-1,wi=-1,mostrou=false,comecou=false,rots=['','rot1','rot2','rot3'];
+function findChunk(t){
+  var i=ci<0?0:ci;
+  if(i>0&&CHUNKS[i]&&t<CHUNKS[i].t)i=0;
+  while(i+1<CHUNKS.length&&CHUNKS[i+1].t<=t)i++;
+  return (CHUNKS[i]&&CHUNKS[i].t<=t)?i:-1;
+}
+function flash(e){if(!e)return;flashfx.textContent=e;flashfx.style.display='flex';flashfx.style.background=Math.random()<.5?'#fff':'#e8c35a';setTimeout(function(){flashfx.style.display='none'},90)}
+function shake(){player.classList.remove('shakeit');void player.offsetWidth;player.classList.add('shakeit')}
+function render(t){
+  var i=findChunk(t);if(i<0)return;
+  var ch=CHUNKS[i],cfg=LINES[ch.line]||{fx:'words',th:'dark'};
+  var nwi=0;for(var k=0;k<ch.w.length;k++){if(t>=ch.w[k][0])nwi=k}
+  if(i===ci&&nwi===wi)return;
+  var newLine=ch.line!==li;
+  if(newLine){
+    stage.className='th-'+cfg.th;
+    if(cfg.flash)flash(cfg.flash);
+    if(cfg.shake)shake();
+  }
+  var punch=cfg.fx==='punch';
+  var cap='<p class="cap'+(punch?' punch':'')+' '+rots[(i)%4]+'">'+capHTML(ch,nwi,punch)+'</p>';
+  var inner='';
+  if(cfg.fx==='photo'){inner='<div class="lay"><img class="foto" src="serena.jpg" alt="">'+cap+'</div>'}
+  else if(cfg.fx==='cards'){inner='<div class="lay"><div class="cards3"><div class="c3">🌙</div><div class="c3">⭐</div><div class="c3">☀️</div></div>'+cap+'</div>'}
+  else if(cfg.fx==='sketch'){inner='<div class="lay">'+SKETCH+cap+'</div>'}
+  else if(cfg.fx==='arrow'){inner='<div class="lay"><div class="arrowbig">⬇️</div>'+cap+'</div>'}
+  else{inner=cap}
+  if(newLine||i!==ci){stage.innerHTML=inner}
+  else{var p=stage.querySelector('.cap');if(p)p.innerHTML=capHTML(ch,nwi,punch)}
+  ci=i;li=ch.line;wi=nwi;
+}
+function tick(){
+  var t=au.currentTime;
+  prog.style.width=Math.min(100,t/CFG.dur*100)+'%';
+  render(t);
+  if(!mostrou&&t>=CFG.cta-0.25){mostrou=true;cta.classList.add('on');
+    if(window.fbq)fbq('trackCustom','VSL_CTA_Visivel')}
   if(!au.paused)requestAnimationFrame(tick);
 }
 player.addEventListener('click',function(){
@@ -199,9 +194,9 @@ player.addEventListener('click',function(){
 });
 au.addEventListener('ended',function(){
   if(!mostrou){mostrou=true;cta.classList.add('on')}
-  pausado.style.display='flex';pausado.lastChild.textContent='';
-  pausado.firstElementChild.style.display='none';
-  pausado.insertAdjacentText('beforeend','👇 Toque no botão verde abaixo');
+  pausado.querySelector('svg').style.display='none';
+  pausado.querySelector('span').textContent=CFG.endtxt;
+  pausado.style.display='flex';
 });
 if(PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
