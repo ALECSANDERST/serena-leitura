@@ -14,76 +14,44 @@ body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--txt);
  background:radial-gradient(1100px 560px at 50% -8%,#2a1458,#0d0720 62%);
  min-height:100dvh;display:flex;flex-direction:column;align-items:center;
  padding:16px 14px 44px;text-align:center;overflow-x:hidden}
-.topo{max-width:860px;width:100%}
+.topo{max-width:760px;width:100%}
 .selo{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--gold);
  border:1px solid #e8c35a66;border-radius:20px;padding:6px 14px;margin-bottom:12px;text-transform:uppercase}
-h1{font-size:clamp(22px,3.6vw,36px);line-height:1.2;font-weight:800;margin-bottom:8px}
+h1{font-size:clamp(21px,3.4vw,33px);line-height:1.2;font-weight:800;margin-bottom:8px}
 h1 em{font-style:normal;color:var(--gold)}
 .sub{font-size:clamp(14px,2vw,17px);color:var(--muted);margin-bottom:16px;line-height:1.45}
 .sub b{color:var(--txt)}
 
-/* ================= PLAYER ================= */
-.player{position:relative;width:100%;max-width:860px;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
- cursor:pointer;user-select:none;background:#120a28;border:1px solid #ffffff22;
- box-shadow:0 0 0 1px #00000066,0 22px 70px -14px #000d,0 0 110px -24px #7b3ff2aa}
-#stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:4% 6%}
-.th-dark{background:radial-gradient(120% 120% at 50% 30%,#2a1458,#120a28 70%)}
-.th-black{background:#07040f}
-.th-gold{background:linear-gradient(160deg,#e8c35a,#c79b2e)}
-.th-red{background:radial-gradient(120% 120% at 50% 30%,#4a1030,#160612 70%)}
-.th-green{background:radial-gradient(120% 120% at 50% 30%,#0e4d2c,#071f12 72%)}
-.th-gold .cap, .th-gold .cap b{color:#1a1206 !important;text-shadow:none}
-#stage .cap{font-weight:900;line-height:1.14;text-transform:uppercase;letter-spacing:.5px;
- font-size:clamp(26px,5.2vw,54px);text-shadow:0 3px 22px #000b}
-.cap .hot{color:var(--gold)}
-.cap .on{display:inline-block;animation:popw .14s ease-out}
-@keyframes popw{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
-.punch{font-size:clamp(44px,10vw,110px) !important;letter-spacing:1px}
-.rot1{transform:rotate(-1.6deg)}.rot2{transform:rotate(1.4deg)}.rot3{transform:rotate(0deg) scale(1.04)}
-
-.lay{display:flex;flex-direction:column;align-items:center;gap:3vh;width:100%}
-.foto{width:clamp(120px,22vh,190px);height:clamp(120px,22vh,190px);border-radius:50%;object-fit:cover;
- border:4px solid var(--gold);box-shadow:0 0 60px -8px #e8c35abb;animation:kb 5s ease-out forwards}
-@keyframes kb{from{transform:scale(.86)}to{transform:scale(1.06)}}
-.cards3{display:flex;gap:3vw}
-.c3{width:clamp(56px,10vh,92px);aspect-ratio:2/3;border-radius:10px;border:2px solid var(--gold);
- background:linear-gradient(160deg,#3b1d6e,#120a2a);box-shadow:0 10px 28px -8px #000c;
- display:flex;align-items:center;justify-content:center;font-size:clamp(22px,4vh,34px);
- animation:flip .5s cubic-bezier(.2,.9,.3,1.2) backwards}
-.c3:nth-child(2){animation-delay:.14s}.c3:nth-child(3){animation-delay:.28s}
-@keyframes flip{from{transform:rotateY(90deg) translateY(16px);opacity:0}to{transform:none;opacity:1}}
-.sketch path{fill:none;stroke:#f3e3a0;stroke-width:2.4;stroke-linecap:round;
- stroke-dasharray:900;stroke-dashoffset:900;animation:draw 3.4s ease forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.arrowbig{font-size:clamp(50px,11vh,90px);animation:quica .8s infinite}
-@keyframes quica{0%,100%{transform:translateY(0)}50%{transform:translateY(14px)}}
-
-.flashfx{position:absolute;inset:0;z-index:6;display:none;align-items:center;justify-content:center;
- background:#fff;font-size:clamp(60px,14vh,110px)}
-.shakeit{animation:shk .34s linear}
-@keyframes shk{0%{transform:translate(0)}15%{transform:translate(-9px,5px) rotate(-.7deg)}30%{transform:translate(8px,-6px) rotate(.6deg)}45%{transform:translate(-7px,-4px)}60%{transform:translate(6px,5px) rotate(.4deg)}75%{transform:translate(-4px,2px)}100%{transform:none}}
-.vinheta{position:absolute;inset:0;background:radial-gradient(95% 95% at 50% 45%,transparent 58%,#000a);z-index:2;pointer-events:none}
-
-.poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;z-index:8;background:linear-gradient(160deg,#2a1458f2,#0d0720f5)}
-.poster img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 0 40px -6px #e8c35a88}
-.play{width:86px;height:86px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 0 #1fba5880;animation:pulso 1.5s infinite}
-.play svg{width:36px;height:36px;fill:#fff;margin-left:6px}
-@keyframes pulso{0%{box-shadow:0 0 0 0 #1fba5880}70%{box-shadow:0 0 0 28px #1fba5800}100%{box-shadow:0 0 0 0 #1fba5800}}
-.poster .dica{font-size:15px;color:#fff;font-weight:700}
-.poster .dica small{display:block;color:var(--muted);font-weight:400;margin-top:3px;font-size:12px}
-.pausado{position:absolute;inset:0;z-index:9;display:none;align-items:center;justify-content:center;background:#000b;font-weight:800;font-size:19px;flex-direction:column;gap:10px}
-.pausado svg{width:54px;height:54px;fill:#fff}
-.barra{position:absolute;left:0;bottom:0;height:6px;width:100%;background:#ffffff22;z-index:7}
+/* -------- player vertical (9:16) -------- */
+.player{position:relative;width:min(94vw,calc(74vh * 9 / 16),420px);aspect-ratio:9/16;
+ border-radius:18px;overflow:hidden;cursor:pointer;user-select:none;background:#07040f;
+ border:1px solid #ffffff2a;box-shadow:0 0 0 1px #00000066,0 24px 80px -16px #000d,0 0 120px -26px #7b3ff2cc}
+.player video{width:100%;height:100%;object-fit:cover;display:block;background:#07040f}
+.poster{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+ background:linear-gradient(180deg,#0d072055,#0d0720cc),url("poster.jpg") center/cover}
+.play{width:88px;height:88px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;
+ box-shadow:0 0 0 0 #1fba5880;animation:pulso 1.5s infinite}
+.play svg{width:38px;height:38px;fill:#fff;margin-left:6px}
+@keyframes pulso{0%{box-shadow:0 0 0 0 #1fba5880}70%{box-shadow:0 0 0 30px #1fba5800}100%{box-shadow:0 0 0 0 #1fba5800}}
+.poster .dica{font-size:16px;font-weight:800;text-shadow:0 2px 12px #000}
+.poster .dica small{display:block;font-weight:500;color:#e9e2f7;margin-top:4px;font-size:12.5px}
+.pausado{position:absolute;inset:0;z-index:6;display:none;align-items:center;justify-content:center;
+ background:#000b;font-weight:800;font-size:19px;flex-direction:column;gap:10px;text-align:center;padding:0 8%}
+.pausado svg{width:56px;height:56px;fill:#fff}
+.barra{position:absolute;left:0;bottom:0;height:6px;width:100%;background:#ffffff26;z-index:7}
 .barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),#f5d87a)}
+.mute{position:absolute;top:12px;right:12px;z-index:7;background:#000a;border-radius:20px;
+ padding:7px 12px;font-size:12.5px;font-weight:700;display:none}
 
-/* ================= CTA ================= */
-.cta{max-width:860px;width:100%;margin-top:6px;display:none;flex-direction:column;align-items:center;gap:12px}
+/* -------- CTA -------- */
+.cta{max-width:760px;width:100%;margin-top:8px;display:none;flex-direction:column;align-items:center;gap:12px}
 .cta.on{display:flex;animation:sobe .5s ease}
 @keyframes sobe{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .seta{font-size:26px;animation:quica 1.1s infinite;margin-top:8px}
-.botao{display:block;width:100%;max-width:620px;text-decoration:none;color:#fff;
+@keyframes quica{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
+.botao{display:block;width:100%;max-width:560px;text-decoration:none;color:#fff;
  background:linear-gradient(180deg,var(--green),var(--green2));
- font-size:clamp(17px,2.6vw,22px);font-weight:800;padding:18px 22px;border-radius:14px;
+ font-size:clamp(17px,2.6vw,21px);font-weight:800;padding:18px 22px;border-radius:14px;
  box-shadow:0 10px 30px -8px #1fba58cc,inset 0 1px 0 #ffffff55;animation:pulso 1.7s infinite}
 .botao small{display:block;font-size:12.5px;font-weight:600;opacity:.92;margin-top:4px}
 .confia{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;color:var(--muted);font-size:12.5px}
@@ -95,18 +63,16 @@ h1 em{font-style:normal;color:var(--gold)}
 <div class="topo">
   <div class="selo">✦ Lectura gratis · 2 minutos ✦</div>
   <h1>Ella hace tu lectura… y <em>dibuja a mano el rostro</em> de la persona que el destino guardó para ti</h1>
-  <p class="sub">Dale <b>play</b> 🔊 y deja que Serena te cuente lo que las <b>3 cartas</b> pueden revelar sobre tu futuro amoroso.</p>
+  <p class="sub">Dale <b>play</b> 🔊 y mira hasta el final — el botón para tu <b>lectura gratis</b> aparece abajo.</p>
 </div>
 
 <div class="player" id="player">
-  <div id="stage" class="th-dark"></div>
-  <div class="vinheta"></div>
-  <div class="flashfx" id="flashfx"></div>
+  <video id="vid" src="vsl.mp4" preload="metadata" playsinline></video>
+  <div class="mute" id="mute">🔊</div>
   <div class="pausado" id="pausado"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>CONTINUAR</span></div>
   <div class="poster" id="poster">
-    <img src="serena.jpg" alt="Serena">
     <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-    <div class="dica">Toca para ver tu lectura <small>🔊 activa el sonido · dura solo 2 minutos</small></div>
+    <div class="dica">Toca para ver tu lectura <small>🔊 con sonido · dura solo 2 minutos</small></div>
   </div>
   <div class="barra"><i id="prog"></i></div>
 </div>
@@ -119,80 +85,33 @@ h1 em{font-style:normal;color:var(--gold)}
 
 <p class="rodape">Las lecturas y retratos tienen carácter de entretenimiento y autoconocimiento. Este sitio no está afiliado a WhatsApp/Meta.</p>
 
-<audio id="au" src="vsl.mp3" preload="auto"></audio>
 <script>
-var CFG={funil:"https://viewer-production-9bb07eb4.up.railway.app/serena-es",cta:97.78,dur:119.44,endtxt:"👇 Toca el botón verde abajo"};
+var CFG={funil:"https://viewer-production-9bb07eb4.up.railway.app/serena-es",cta:97.5,endtxt:"👇 Toca el botón verde abajo"};
 var PIXEL_ID="";
-var CHUNKS=[{"t":0.102,"line":0,"w":[[0.102,"Espera"]]},{"t":1.688,"line":0,"w":[[1.688,"No"]]},{"t":1.92,"line":0,"w":[[1.92,"cierres"]]},{"t":2.436,"line":0,"w":[[2.436,"este"]]},{"t":2.693,"line":0,"w":[[2.693,"video"]]},{"t":4.602,"line":1,"w":[[4.602,"Porque"],[4.846,"en"],[4.924,"los"]]},{"t":5.091,"line":1,"w":[[5.091,"próximos"],[5.607,"dos"],[5.787,"minutos"]]},{"t":6.651,"line":1,"w":[[6.651,"puedes"],[6.934,"descubrir"],[7.398,"el"]]},{"t":7.527,"line":1,"w":[[7.527,"rostro"],[7.888,"de"],[7.978,"la"]]},{"t":8.094,"line":1,"w":[[8.094,"persona"],[8.584,"que"],[8.79,"el"]]},{"t":8.906,"line":1,"w":[[8.906,"destino"],[9.382,"guardó"],[9.743,"para"]]},{"t":9.988,"line":1,"w":[[9.988,"ti"]]},{"t":11.67,"line":2,"w":[[11.67,"Y"],[11.824,"no"]]},{"t":13.076,"line":2,"w":[[13.076,"no"],[13.372,"es"],[13.565,"una"]]},{"t":13.759,"line":2,"w":[[13.759,"broma"]]},{"t":15.034,"line":2,"w":[[15.034,"Déjame"],[15.485,"explicarte"]]},{"t":17.706,"line":3,"w":[[17.706,"Me"],[17.86,"llamo"],[18.234,"Serena"]]},{"t":19.717,"line":3,"w":[[19.717,"Y"],[19.872,"tengo"],[20.194,"un"]]},{"t":20.336,"line":3,"w":[[20.336,"don"],[20.503,"extraño"]]},{"t":21.354,"line":3,"w":[[21.354,"mezclo"],[21.792,"el"],[21.908,"tarot"]]},{"t":22.475,"line":3,"w":[[22.475,"con"],[22.643,"el"],[22.784,"dibujo"]]},{"t":24.726,"line":4,"w":[[24.726,"Cuando"],[25.009,"hago"],[25.215,"tu"]]},{"t":25.344,"line":4,"w":[[25.344,"lectura"]]},{"t":26.117,"line":4,"w":[[26.117,"las"],[26.272,"cartas"],[26.659,"me"]]},{"t":26.762,"line":4,"w":[[26.762,"muestran"],[27.213,"la"],[27.316,"energía"]]},{"t":27.831,"line":4,"w":[[27.831,"de"],[27.921,"la"],[28.037,"persona"]]},{"t":28.501,"line":4,"w":[[28.501,"unida"],[29.03,"a"],[29.107,"tu"]]},{"t":29.262,"line":4,"w":[[29.262,"destino"],[29.751,"amoroso"]]},{"t":31.722,"line":5,"w":[[31.722,"Y"],[31.838,"entonces"],[32.392,"tomo"]]},{"t":32.624,"line":5,"w":[[32.624,"el"],[32.688,"lápiz"],[33.307,"y"]]},{"t":33.384,"line":5,"w":[[33.384,"dibujo"]]},{"t":34.222,"line":5,"w":[[34.222,"trazo"],[34.557,"a"],[34.608,"trazo"]]},{"t":35.278,"line":5,"w":[[35.278,"el"],[35.472,"rostro"],[35.845,"que"]]},{"t":35.974,"line":5,"w":[[35.974,"veo"]]},{"t":37.758,"line":6,"w":[[37.758,"Dime"],[38.093,"si"],[38.273,"esto"]]},{"t":38.544,"line":6,"w":[[38.544,"te"],[38.672,"suena"]]},{"t":39.304,"line":6,"w":[[39.304,"estás"],[39.639,"sufriendo"],[40.129,"por"]]},{"t":40.322,"line":6,"w":[[40.322,"alguien"],[40.683,"que"],[40.786,"se"]]},{"t":40.928,"line":6,"w":[[40.928,"fue"]]},{"t":42.642,"line":7,"w":[[42.642,"Estás"],[42.964,"confundida"]]},{"t":43.995,"line":7,"w":[[43.995,"sin"],[44.188,"saber"],[44.536,"si"]]},{"t":44.768,"line":7,"w":[[44.768,"él"],[44.897,"es"],[45.038,"la"]]},{"t":45.167,"line":7,"w":[[45.167,"persona"],[45.644,"correcta"]]},{"t":47.622,"line":8,"w":[[47.622,"O"],[47.738,"ya"],[47.905,"estás"]]},{"t":48.189,"line":8,"w":[[48.189,"cansada"],[48.665,"de"],[48.756,"esperar"]]},{"t":49.142,"line":8,"w":[[49.142,"un"],[49.284,"amor"],[49.632,"que"]]},{"t":49.761,"line":8,"w":[[49.761,"nunca"],[50.147,"llega"]]},{"t":51.978,"line":9,"w":[[51.978,"Pues"]]},{"t":52.197,"line":9,"w":[[52.197,"presta"]]},{"t":52.532,"line":9,"w":[[52.532,"mucha"]]},{"t":52.88,"line":9,"w":[[52.88,"atención"]]},{"t":53.717,"line":9,"w":[[53.717,"porque"]]},{"t":54.091,"line":9,"w":[[54.091,"esta"]]},{"t":54.349,"line":9,"w":[[54.349,"parte"]]},{"t":54.851,"line":9,"w":[[54.851,"es"]]},{"t":55.032,"line":9,"w":[[55.032,"importante"]]},{"t":57.174,"line":10,"w":[[57.174,"Las"],[57.354,"mujeres"],[57.779,"que"]]},{"t":57.882,"line":10,"w":[[57.882,"llegan"],[58.217,"a"],[58.282,"mí"]]},{"t":58.823,"line":10,"w":[[58.823,"llegan"],[59.235,"llenas"],[59.545,"de"]]},{"t":59.648,"line":10,"w":[[59.648,"preguntas"]]},{"t":60.485,"line":10,"w":[[60.485,"y"],[60.537,"salen"],[60.924,"con"]]},{"t":61.117,"line":10,"w":[[61.117,"una"],[61.31,"respuesta"],[61.877,"en"]]},{"t":61.954,"line":10,"w":[[61.954,"las"],[62.135,"manos"]]},{"t":64.098,"line":11,"w":[[64.098,"Un"]]},{"t":64.304,"line":11,"w":[[64.304,"retrato"]]},{"t":65.813,"line":11,"w":[[65.813,"Una"]]},{"t":66.083,"line":11,"w":[[66.083,"dirección"]]},{"t":67.656,"line":11,"w":[[67.656,"Una"]]},{"t":67.888,"line":11,"w":[[67.888,"paz"]]},{"t":68.158,"line":11,"w":[[68.158,"que"]]},{"t":68.274,"line":11,"w":[[68.274,"no"]]},{"t":68.403,"line":11,"w":[[68.403,"sentían"]]},{"t":68.957,"line":11,"w":[[68.957,"hace"]]},{"t":69.189,"line":11,"w":[[69.189,"mucho"]]},{"t":69.524,"line":11,"w":[[69.524,"tiempo"]]},{"t":71.406,"line":12,"w":[[71.406,"Y"],[71.573,"hoy"],[71.792,"quiero"]]},{"t":72.05,"line":12,"w":[[72.05,"hacer"],[72.333,"eso"],[72.54,"por"]]},{"t":72.759,"line":12,"w":[[72.759,"ti"]]},{"t":73.274,"line":12,"w":[[73.274,"preparé"],[73.699,"una"],[73.906,"lectura"]]},{"t":74.331,"line":12,"w":[[74.331,"gratuita"]]},{"t":75.181,"line":12,"w":[[75.181,"de"],[75.31,"menos"],[75.735,"de"]]},{"t":75.826,"line":12,"w":[[75.826,"dos"],[76.07,"minutos"]]},{"t":78.138,"line":13,"w":[[78.138,"Eliges"],[78.601,"tres"],[78.859,"cartas"]]},{"t":79.645,"line":13,"w":[[79.645,"me"],[79.761,"cuentas"],[80.148,"qué"]]},{"t":80.251,"line":13,"w":[[80.251,"aflige"],[80.689,"tu"],[80.818,"corazón"]]},{"t":81.617,"line":13,"w":[[81.617,"y"],[81.707,"te"],[81.836,"muestro"]]},{"t":82.3,"line":13,"w":[[82.3,"lo"],[82.429,"que"],[82.571,"tu"]]},{"t":82.674,"line":13,"w":[[82.674,"energía"],[83.215,"revela"]]},{"t":85.11,"line":14,"w":[[85.11,"Pero"],[85.251,"escucha"],[85.651,"bien"]]},{"t":86.269,"line":14,"w":[[86.269,"cada"],[86.527,"retrato"],[87.043,"se"]]},{"t":87.197,"line":14,"w":[[87.197,"dibuja"],[87.713,"a"],[87.751,"mano"]]},{"t":88.331,"line":14,"w":[[88.331,"uno"],[88.563,"por"],[88.744,"uno"]]},{"t":90.45,"line":15,"w":[[90.45,"Por"]]},{"t":90.617,"line":15,"w":[[90.617,"eso"]]},{"t":90.836,"line":15,"w":[[90.836,"solo"]]},{"t":91.081,"line":15,"w":[[91.081,"acepto"]]},{"t":91.493,"line":15,"w":[[91.493,"un"]]},{"t":91.648,"line":15,"w":[[91.648,"número"]]},{"t":91.944,"line":15,"w":[[91.944,"limitado"]]},{"t":92.537,"line":15,"w":[[92.537,"de"]]},{"t":92.653,"line":15,"w":[[92.653,"lecturas"]]},{"t":93.181,"line":15,"w":[[93.181,"por"]]},{"t":93.349,"line":15,"w":[[93.349,"día"]]},{"t":94.575,"line":15,"w":[[94.575,"Y"]]},{"t":94.704,"line":15,"w":[[94.704,"cuando"]]},{"t":94.948,"line":15,"w":[[94.948,"se"]]},{"t":95.077,"line":15,"w":[[95.077,"acaban"]]},{"t":95.799,"line":15,"w":[[95.799,"se"]]},{"t":95.928,"line":15,"w":[[95.928,"acaban"]]},{"t":97.878,"line":16,"w":[[97.878,"Ahora"],[98.303,"mira"],[98.676,"aquí"]]},{"t":98.986,"line":16,"w":[[98.986,"abajo"]]},{"t":100.392,"line":16,"w":[[100.392,"Apareció"],[100.959,"un"],[101.062,"botón"]]},{"t":101.462,"line":16,"w":[[101.462,"verde"],[101.758,"debajo"],[102.235,"de"]]},{"t":102.467,"line":16,"w":[[102.467,"este"],[102.724,"video"]]},{"t":104.586,"line":17,"w":[[104.586,"Tócalo"]]},{"t":105.372,"line":17,"w":[[105.372,"y"],[105.5,"tu"],[105.604,"lectura"]]},{"t":106.042,"line":17,"w":[[106.042,"comienza"],[106.66,"ahora"],[106.957,"mismo"]]},{"t":107.653,"line":17,"w":[[107.653,"gratis"]]},{"t":108.477,"line":17,"w":[[108.477,"rápida"]]},{"t":109.225,"line":17,"w":[[109.225,"y"],[109.405,"hecha"],[109.689,"para"]]},{"t":109.921,"line":17,"w":[[109.921,"ti"]]},{"t":111.606,"line":18,"w":[[111.606,"La"],[111.734,"respuesta"],[112.237,"que"]]},{"t":112.366,"line":18,"w":[[112.366,"buscas"],[112.804,"está"],[113.152,"a"]]},{"t":113.216,"line":18,"w":[[113.216,"tres"],[113.539,"cartas"],[113.951,"de"]]},{"t":114.041,"line":18,"w":[[114.041,"distancia"]]},{"t":116.106,"line":19,"w":[[116.106,"Te"],[116.196,"estoy"],[116.544,"esperando"]]},{"t":118.066,"line":19,"w":[[118.066,"Ven"]]}];
-var LINES=[{"fx":"punch","th":"black","shake":1,"flash":"⚡"},{"fx":"words","th":"dark","shake":0,"flash":""},{"fx":"words","th":"gold","shake":1,"flash":""},{"fx":"photo","th":"dark","shake":0,"flash":""},{"fx":"cards","th":"dark","shake":0,"flash":"🔮"},{"fx":"sketch","th":"black","shake":0,"flash":""},{"fx":"words","th":"red","shake":1,"flash":"💔"},{"fx":"words","th":"red","shake":0,"flash":""},{"fx":"words","th":"red","shake":0,"flash":""},{"fx":"punch","th":"gold","shake":1,"flash":""},{"fx":"words","th":"dark","shake":0,"flash":""},{"fx":"punch","th":"dark","shake":0,"flash":"✨"},{"fx":"words","th":"green","shake":0,"flash":"🎁"},{"fx":"cards","th":"dark","shake":0,"flash":""},{"fx":"words","th":"black","shake":0,"flash":"✍️"},{"fx":"punch","th":"red","shake":1,"flash":""},{"fx":"arrow","th":"green","shake":1,"flash":""},{"fx":"words","th":"green","shake":0,"flash":""},{"fx":"words","th":"dark","shake":0,"flash":""},{"fx":"photo","th":"black","shake":1,"flash":""}];
-var HOT=["rostro", "destino", "amor", "tarot", "dibujo", "dibuja", "retrato", "gratis", "gratuita", "cartas", "verde", "boton", "botón", "ven", "ahora", "limitado", "acaban", "respuesta", "paz", "direccion", "dirección", "corazon", "corazón", "mano", "lectura"];
-var SKETCH='<svg class="sketch" viewBox="0 0 200 200" style="width:clamp(120px,24vh,200px)"><path d="M60 38 C92 18 138 26 148 62 C154 84 150 104 142 120 C136 132 134 146 128 156 C118 172 92 178 76 166 C62 156 58 140 56 124 C54 108 50 92 52 74 C53 60 54 46 60 38 Z"/><path d="M78 92 q10 -8 22 -2 M120 88 q10 -6 20 0"/><path d="M104 96 q-2 16 2 22 q-4 6 -10 4"/><path d="M86 138 q16 12 34 2"/><path d="M56 70 q20 -26 52 -24 q28 2 40 20"/></svg>';
-
-var au=document.getElementById('au'),stage=document.getElementById('stage'),
- player=document.getElementById('player'),poster=document.getElementById('poster'),
- prog=document.getElementById('prog'),cta=document.getElementById('cta'),
- pausado=document.getElementById('pausado'),flashfx=document.getElementById('flashfx');
+var vid=document.getElementById('vid'),player=document.getElementById('player'),
+ poster=document.getElementById('poster'),prog=document.getElementById('prog'),
+ cta=document.getElementById('cta'),pausado=document.getElementById('pausado');
 
 (function(){var q=location.search.replace(/^\?/,'');
 document.getElementById('botao').href=CFG.funil+(q?('?'+q):'')})();
 
-function esHot(w){w=w.toLowerCase().replace(/[^a-záéíóúüñàâãêôõç]/g,'');return HOT.indexOf(w)>=0}
-function capHTML(ch,wi,punch){
-  var h='';
-  for(var k=0;k<ch.w.length;k++){
-    if(k>wi)break;
-    var w=ch.w[k][1],cls=(esHot(w)?'hot':'')+(k===wi?' on':'');
-    h+='<span class="'+cls+'">'+w+'</span> ';
-  }
-  return h;
-}
-var ci=-1,li=-1,wi=-1,mostrou=false,comecou=false,rots=['','rot1','rot2','rot3'];
-function findChunk(t){
-  var i=ci<0?0:ci;
-  if(i>0&&CHUNKS[i]&&t<CHUNKS[i].t)i=0;
-  while(i+1<CHUNKS.length&&CHUNKS[i+1].t<=t)i++;
-  return (CHUNKS[i]&&CHUNKS[i].t<=t)?i:-1;
-}
-function flash(e){if(!e)return;flashfx.textContent=e;flashfx.style.display='flex';flashfx.style.background=Math.random()<.5?'#fff':'#e8c35a';setTimeout(function(){flashfx.style.display='none'},90)}
-function shake(){player.classList.remove('shakeit');void player.offsetWidth;player.classList.add('shakeit')}
-function render(t){
-  var i=findChunk(t);if(i<0)return;
-  var ch=CHUNKS[i],cfg=LINES[ch.line]||{fx:'words',th:'dark'};
-  var nwi=0;for(var k=0;k<ch.w.length;k++){if(t>=ch.w[k][0])nwi=k}
-  if(i===ci&&nwi===wi)return;
-  var newLine=ch.line!==li;
-  if(newLine){
-    stage.className='th-'+cfg.th;
-    if(cfg.flash)flash(cfg.flash);
-    if(cfg.shake)shake();
-  }
-  var punch=cfg.fx==='punch';
-  var cap='<p class="cap'+(punch?' punch':'')+' '+rots[(i)%4]+'">'+capHTML(ch,nwi,punch)+'</p>';
-  var inner='';
-  if(cfg.fx==='photo'){inner='<div class="lay"><img class="foto" src="serena.jpg" alt="">'+cap+'</div>'}
-  else if(cfg.fx==='cards'){inner='<div class="lay"><div class="cards3"><div class="c3">🌙</div><div class="c3">⭐</div><div class="c3">☀️</div></div>'+cap+'</div>'}
-  else if(cfg.fx==='sketch'){inner='<div class="lay">'+SKETCH+cap+'</div>'}
-  else if(cfg.fx==='arrow'){inner='<div class="lay"><div class="arrowbig">⬇️</div>'+cap+'</div>'}
-  else{inner=cap}
-  if(newLine||i!==ci){stage.innerHTML=inner}
-  else{var p=stage.querySelector('.cap');if(p)p.innerHTML=capHTML(ch,nwi,punch)}
-  ci=i;li=ch.line;wi=nwi;
-}
+var mostrou=false,comecou=false,terminou=false;
 function tick(){
-  var t=au.currentTime;
-  prog.style.width=Math.min(100,t/CFG.dur*100)+'%';
-  render(t);
-  if(!mostrou&&t>=CFG.cta-0.25){mostrou=true;cta.classList.add('on');
+  var d=vid.duration||115.2,t=vid.currentTime;
+  prog.style.width=Math.min(100,t/d*100)+'%';
+  if(!mostrou&&t>=CFG.cta){mostrou=true;cta.classList.add('on');
     if(window.fbq)fbq('trackCustom','VSL_CTA_Visivel')}
-  if(!au.paused)requestAnimationFrame(tick);
+  if(!vid.paused&&!vid.ended)requestAnimationFrame(tick);
 }
 player.addEventListener('click',function(){
-  if(!comecou){comecou=true;poster.style.display='none';au.play();
-    if(window.fbq)fbq('track','ViewContent');requestAnimationFrame(tick);return}
-  if(au.paused){pausado.style.display='none';au.play();requestAnimationFrame(tick)}
-  else{au.pause();pausado.style.display='flex'}
+  if(!comecou){comecou=true;poster.style.display='none';vid.muted=false;vid.volume=1;
+    vid.play();if(window.fbq)fbq('track','ViewContent');requestAnimationFrame(tick);return}
+  if(terminou)return;
+  if(vid.paused){pausado.style.display='none';vid.play();requestAnimationFrame(tick)}
+  else{vid.pause();pausado.style.display='flex'}
 });
-au.addEventListener('ended',function(){
+vid.addEventListener('ended',function(){
+  terminou=true;
   if(!mostrou){mostrou=true;cta.classList.add('on')}
   pausado.querySelector('svg').style.display='none';
   pausado.querySelector('span').textContent=CFG.endtxt;
