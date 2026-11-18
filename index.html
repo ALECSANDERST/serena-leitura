@@ -88,6 +88,8 @@ h1 em{font-style:normal;color:var(--gold)}
 <script>
 var CFG={funil:"https://viewer-production-9bb07eb4.up.railway.app/serena-es",cta:97.5,endtxt:"👇 Toca el botón verde abajo"};
 var PIXEL_ID="";
+var TT_PIXEL_ID="";
+function tt(ev,p){if(window.ttq&&TT_PIXEL_ID)ttq.track(ev,p||{})}
 var vid=document.getElementById('vid'),player=document.getElementById('player'),
  poster=document.getElementById('poster'),prog=document.getElementById('prog'),
  cta=document.getElementById('cta'),pausado=document.getElementById('pausado');
@@ -105,7 +107,8 @@ function tick(){
 }
 player.addEventListener('click',function(){
   if(!comecou){comecou=true;poster.style.display='none';vid.muted=false;vid.volume=1;
-    vid.play();if(window.fbq)fbq('track','ViewContent');requestAnimationFrame(tick);return}
+    vid.play();if(window.fbq)fbq('track','ViewContent');
+    tt('ViewContent',{content_type:'product',contents:[{content_id:'retrato',content_name:'VSL Serena'}]});requestAnimationFrame(tick);return}
   if(terminou)return;
   if(vid.paused){pausado.style.display='none';vid.play();requestAnimationFrame(tick)}
   else{vid.pause();pausado.style.display='flex'}
@@ -123,6 +126,8 @@ n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init',PIXEL_ID);fbq('track','PageView');}
+document.getElementById('botao').addEventListener('click',function(){tt('ClickButton',{content_type:'product',contents:[{content_id:'retrato',content_name:'CTA VSL'}]})});
+if(TT_PIXEL_ID){!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie','holdConsent','revokeConsent','grantConsent'];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var r='https://analytics.tiktok.com/i18n/pixel/events.js';ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=d.createElement('script');n.type='text/javascript',n.async=!0,n.src=r+'?sdkid='+e+'&lib='+t;e=d.getElementsByTagName('script')[0];e.parentNode.insertBefore(n,e)};ttq.load(TT_PIXEL_ID);ttq.page();}(window,document,'ttq');}
 </script>
 </body>
 </html>
