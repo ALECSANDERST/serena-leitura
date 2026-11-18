@@ -398,8 +398,7 @@ const PRICE_NORMAL = '$249 MXN';
 const ASSETS = {
   avatar:       'img/avatar.jpg',        // foto da Serena (topo)
   visualizando: 'img/visualizando.jpg',  // imagem enquanto "visualiza" as cartas
-  // SOMENTE depoimentos de clientes REAIS (com autorização). Lista vazia = o bloco não aparece.
-  depoimentos: [],
+  depoimentos: ['img/depoimento1.jpeg','img/depoimento2.png','img/depoimento3.jpeg'],
   carta:        'img/carta.jpg'          // verso das cartas (mesma p/ todas)
 };
 
@@ -934,14 +933,12 @@ async function run(){
   await botMessage('Voy a analizar profundamente tus cartas, y junto a mi don...');
   await botMessage('Voy a hacer un **dibujo** del rostro que estoy visualizando... ¿Será que es **{{nomeDele}}**?');
   await delay(2000);
-  await botMessage('Cada retrato lo hago **a mano**, con mucho cariño... Muchas personas se **emocionan** al recibir el dibujo...');
-  if(ASSETS.depoimentos.length){
-    await botMessage('Mira lo que me enviaron algunas clientas que ya recibieron su dibujo...');
-    await delay(1000);
-    for(const dep of ASSETS.depoimentos){
-      await botImage(dep, 700);
-      await delay(2000);
-    }
+  await botMessage('Mi retrato tiene una **precisión de hasta el 98%...** Muchas personas se **emocionan** al recibir el dibujo...');
+  await botMessage('Mira el testimonio de 3 de las miles de clientas que recibieron el dibujo **idéntico a su pareja...**');
+  await delay(1000);
+  for(const dep of ASSETS.depoimentos){
+    await botImage(dep, 700);
+    await delay(2000);
   }
 
   await botMessage('¿Puedo comenzar tu dibujo? Imagina, yo dibujando a **{{nomeDele}}**');
@@ -996,10 +993,10 @@ async function run(){
   /* ---- GRUPO 5b: agora sim, o pagamento ---- */
   await delay(1500);
   await botMessage('Ahora, una cosa importante...');
-  await botMessage('Normalmente un retrato hecho a mano como este cuesta **' + PRICE_NORMAL + '**...');
+  await botMessage('Yo no estoy cobrando **nada** por los dibujos...');
   await delay(1000);
-  await botMessage('Pero hoy solo te pido una pequeña **tarifa** para **mantener el sistema activo...**');
-  await botMessage('Entonces si quieres **descubrir** si **{{nomeDele}}** es realmente tu llama gemela, basta con pagar la pequeña tarifa de **' + PRICE + '**');
+  await botMessage('Pero la herramienta que utilizo para hacer la lectura, cobra una pequeña **tarifa** para **mantener el sistema activo...**');
+  await botMessage('Entonces si quieres **confirmar** si **{{nomeDele}}** es realmente tu llama gemela, basta con pagar la pequeña tarifa de **' + PRICE + '**');
   await delay(2000);
   await botMessage('Y pensando aún más en ayudarte... te voy a dar de **REGALO** una **lectura completa** de él');
   await botMessage(
